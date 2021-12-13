@@ -1,9 +1,9 @@
 {extends file='layout.tpl'}
-{block name=title}Enregistrement{/block}
-{block name=page}Enregistrement{/block}
+{block name=title}Candidature{/block}
+{block name=page}Candidature{/block}
 {block name=body}
 
-<form action="register" method="post" enctype="multipart/form-data" id='register'>
+<form action="candidater" method="post" enctype="multipart/form-data" id='register'>
   <div>
         <label for="NomGroupe"> Nom du groupe : </label> 
         <br>
@@ -187,6 +187,48 @@
     <br>
     <input type='radio' name='producteur' value='oui' required>
     <input type='radio' name='producteur' value='non'>
+    </div>
+
+    <div>
+    <br>
+    <label for="fichiermp3"> Merci d'uploader 3 fichiers au format mp3 </label>
+    <br>
+    <input type='file' name='fichiermp3[]' accept=".mp3" multiple required>
+    </div>
+
+    <div>
+    <br>
+    <label for="presse"> uploader un article de presse au format pdf (facultatif) </label>
+    <br>
+    <input type='file' name='presse' accept=".pdf">
+    </div>
+
+    <div>
+    <br>
+    <label for="photogroupe"> Merci d'uploader 2 images au format PNG </label>
+    <br>
+    <input type='file' name='photogroupe[]' accept=".png" multiple required>
+    </div>
+
+    <div>
+    <br>
+    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
+    <br>
+    <input type='file' name='ficheTech' accept=".pdf" required>
+    </div>
+
+    <div>
+    <br>
+    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
+    <br>
+    <input type='file' name='ficheTech' accept=".pdf" required>
+    </div>
+
+    <div>
+    <br>
+    <label for="setlist"> Uploader un document de la SACEM ou le détail des morceaux de la setlist au format pdf </label>
+    <br>
+    <input type='file' name='setlist' accept=".pdf" required>
     </div>
 
     <div>

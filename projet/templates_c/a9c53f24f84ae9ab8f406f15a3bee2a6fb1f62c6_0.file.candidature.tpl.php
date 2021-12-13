@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-13 07:51:46
+/* Smarty version 3.1.34-dev-7, created on 2021-12-13 08:45:13
   from 'C:\laragon\www\tps\projet\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61b6fb922f8131_05113837',
+  'unifunc' => 'content_61b708191b1a12_81775309',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9c53f24f84ae9ab8f406f15a3bee2a6fb1f62c6' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\candidature.tpl',
-      1 => 1639381899,
+      1 => 1639384699,
       2 => 'file',
     ),
   ),
@@ -20,69 +20,69 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61b6fb922f8131_05113837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61b708191b1a12_81775309 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105789696461b6fb922ed029_59739628', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169045718561b708191a70c9_53015825', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_138729851161b6fb922ed8f9_44615541', 'page');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_63383563461b708191a7a24_70650414', 'page');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_33419821861b6fb922edee7_45683499', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175429031061b708191a7ff4_30870236', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_105789696461b6fb922ed029_59739628 extends Smarty_Internal_Block
+class Block_169045718561b708191a70c9_53015825 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_105789696461b6fb922ed029_59739628',
+    0 => 'Block_169045718561b708191a70c9_53015825',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-Enregistrement<?php
+Candidature<?php
 }
 }
 /* {/block 'title'} */
 /* {block 'page'} */
-class Block_138729851161b6fb922ed8f9_44615541 extends Smarty_Internal_Block
+class Block_63383563461b708191a7a24_70650414 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'page' => 
   array (
-    0 => 'Block_138729851161b6fb922ed8f9_44615541',
+    0 => 'Block_63383563461b708191a7a24_70650414',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-Enregistrement<?php
+Candidature<?php
 }
 }
 /* {/block 'page'} */
 /* {block 'body'} */
-class Block_33419821861b6fb922edee7_45683499 extends Smarty_Internal_Block
+class Block_175429031061b708191a7ff4_30870236 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_33419821861b6fb922edee7_45683499',
+    0 => 'Block_175429031061b708191a7ff4_30870236',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
-<form action="register" method="post" enctype="multipart/form-data" id='register'>
+<form action="candidater" method="post" enctype="multipart/form-data" id='register'>
   <div>
         <label for="NomGroupe"> Nom du groupe : </label> 
         <br>
@@ -298,6 +298,48 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <br>
     <input type='radio' name='producteur' value='oui' required>
     <input type='radio' name='producteur' value='non'>
+    </div>
+
+    <div>
+    <br>
+    <label for="fichiermp3"> Merci d'uploader 3 fichiers au format mp3 </label>
+    <br>
+    <input type='file' name='fichiermp3[]' accept=".mp3" multiple required>
+    </div>
+
+    <div>
+    <br>
+    <label for="presse"> uploader un article de presse au format pdf (facultatif) </label>
+    <br>
+    <input type='file' name='presse' accept=".pdf">
+    </div>
+
+    <div>
+    <br>
+    <label for="photogroupe"> Merci d'uploader 2 images au format PNG </label>
+    <br>
+    <input type='file' name='photogroupe[]' accept=".png" multiple required>
+    </div>
+
+    <div>
+    <br>
+    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
+    <br>
+    <input type='file' name='ficheTech' accept=".pdf" required>
+    </div>
+
+    <div>
+    <br>
+    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
+    <br>
+    <input type='file' name='ficheTech' accept=".pdf" required>
+    </div>
+
+    <div>
+    <br>
+    <label for="setlist"> Uploader un document de la SACEM ou le détail des morceaux de la setlist au format pdf </label>
+    <br>
+    <input type='file' name='setlist' accept=".pdf" required>
     </div>
 
     <div>

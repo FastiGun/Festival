@@ -42,4 +42,14 @@ $scene->execute();
 $scene = $scene->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('scene', $scene); 
 
+if(isset($_SESSION['Nom'])){
+    Flight::view()->assign('Nom', $_SESSION['Nom']);
+    
+}
+
+if(isset($_SESSION['Admin'])){
+    Flight::view()->assign('Admin', $_SESSION['Admin']);
+    
+}
+
 Flight::start();
