@@ -116,9 +116,8 @@ footer{
     padding: 50px;
     max-width: 1200px;
     margin: auto;
-    min-height: 600px;
-    background-color: black;
-    opacity: 30%;
+    min-height: 700px;
+    background-color: rgb(0, 0, 0, 0.6);
 }
 
 .titre-page{
@@ -143,4 +142,5 @@ form .bouton-form{
 form .bouton-form:hover{
     background-color: rgb(68, 32, 32);
 }
+
 
