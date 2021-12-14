@@ -4,8 +4,8 @@
         {block name=head}
         <meta charset="utf-8">
         <meta name="viewport" content="">
-        <link rel="stylesheet" href="style/style.css"/>
-        <link rel="stylesheet" href="style/bootstrap.min.css"/>
+        <link rel="stylesheet" href="templates/style.css"/>
+        <link rel="stylesheet" href="templates/bootstrap.min.css"/>
         {/block}
     </head>
     <header>
@@ -46,8 +46,8 @@
     <body>
         <div class="conten-princ titre-page">
             <h1>{block name=page}{/block}</h1>
-        </div>
-        {block name=body}contenu generique{/block}
+            {block name=body}contenu generique{/block}
+        </div>  
     </body>
     <footer>
         <div class="conteneur-footer">
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>©Copyright 2021 - Benjamin HEBERT - Axel GORET</p>
+            <p>© Copyright 2021 - Benjamin HEBERT - Axel GORET</p>
         </div>
     </footer>
     

@@ -6,31 +6,31 @@
 <form action="register" method="post">
 
     <div>
-        <label for="Nom"> Votre nom : </label>
+        <label for="Nom">Votre nom </label>
         <br>
-        <input type="text" name="Nom" value='{$data.Nom|escape|default:''}'>
+        <input type="text" name="Nom" placeholder="GORET" value='{$data.Nom|escape|default:''}'>
         {$messages.Nom|default:''}
     </div>
 
     <div>
         <br>
-        <label for="Email"> Votre Email : </label>
+        <label for="Email">Votre Email </label>
         <br>
-        <input type="email" name="Email" value='{$data.Email|escape|default:''}'>
+        <input type="email" name="Email" placeholder="goret@gmail.com" value='{$data.Email|escape|default:''}'>
         {$messages.Email|default:''}
     </div>
 
     <div>
         <br>
-        <label for="Motdepasse"> Mot de Passe : </label>
+        <label for="Motdepasse">Mot de Passe </label>
         <br>
-        <input type="password" name="Motdepasse">
+        <input type="password" placeholder="*********" name="Motdepasse">
         {$messages.Motdepasse|default:''}
     </div>
 
     <div>
     <br>
-    <input type="submit" value="S'inscrire">
+    <input class="bouton-form btn btn-primary"type="submit" value="S'inscrire">
     </div>
 
 </form>

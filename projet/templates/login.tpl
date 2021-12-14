@@ -6,7 +6,7 @@
 <form action="login" method="post">
 <div>
         <br>
-        <label for="Email"> Votre Email : </label>
+        <label for="Email">Votre Email</label>
         <br>
         <input type="email" name="Email" value='{$data.Email|escape|default:''}'>
         {$messages.Email|default:''}
@@ -14,7 +14,7 @@
 
     <div>
         <br>
-        <label for="Motdepasse"> Mot de Passe : </label>
+        <label for="Motdepasse">Mot de Passe</label>
         <br>
         <input type="password" name="Motdepasse">
         {$messages.Motdepasse|default:''}
@@ -22,7 +22,7 @@
 
     <div>
     <br>
-    <input type="submit" value="Se connecter">
+    <input class="bouton-form btn btn-primary" type="submit" value="Se connecter">
     </div>
 </form>
 </div>

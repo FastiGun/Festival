@@ -4,236 +4,241 @@
 {block name=body}
 
 <form action="candidater" method="post" enctype="multipart/form-data" id='register'>
-  <div>
-        <label for="NomGroupe"> Nom du groupe : </label> 
+    <div class="row">
+        <div class="col-6"><label for="NomGroupe">Nom du groupe</label> 
         <br>
-        <input type="text" name="NomGroupe" value=''>
-
+        <input class="form-control" type="text" name="NomGroupe" value=''></div>
+        <br>
+        <div class="col-6"><label for="AnneeCrea">Année de création</label>
+        <br>
+        <input class="form-control" type="number" name="AnneeCrea" value=''></div>
     </div>
-
-        <div>
-    <br>
-    <label for="AnneeCrea"> Année de création : </label>
-    <br>
-    <input type="number" name="AnneeCrea" value=''>
-    </div>
-
-    <div>
-        <br>
-        <label for="Departement"> Votre Département :</label> <!--Liste déroulante à partir de la table département-->
-        <br>
-        <select name=Departement required>
-        {foreach from=$departements key=$key item=$value}
-            {foreach from=$value key=$champs item=$valeur}
-                <option value={$valeur}> {$valeur}</option>
-            {/foreach}
-        {/foreach}
-        </select>
-    </div>
-
-    <div>
-        <br>
-        <label for="Scene"> Votre Scène : </label> <!--Liste déroulante à partir de la table scene-->
-        <br>
-        <select name=Scene required>
-        {foreach from=$scene key=$key item=$value}
-            {foreach from=$value key=$champs item=$valeur}
-                <option value={$valeur}> {$valeur}</option>
-            {/foreach}
-        {/foreach}
-        </select>
-
-    </div>
-
-    <div>
-        <br>
-        <label for="Responsable"> Information du responsable : (Compte principal)</label>
-        <br>
-        <input type="text" name="Nom_Resp" placeholder='Nom du responsable' required>
-        <input type="text" name="Prenom_Resp" placeholder='Prenom du responsable' required>
-        <input type="text" name="Adresse_Resp" placeholder='Adresse du responsable' required>
-        <input type="number" name="CodeP_Resp" placeholder='Code Postal du responsable' required>
-        <input type="email" name="email_Resp" placeholder='Adresse mail du responsable' required>
-        <input type="tel" name="Tel_Resp" placeholder='Téléphone du responsable' minlength='10' maxlength='10' required>
-    </div>
-
     
-    <div>
     <br>
-    <label for="DescGroupe"> Description du groupe (500 caractères max) : </label>
+
+    <div class="row">
+        <div class="col"
+            <label for="Departement">Votre Département</label> <!--Liste déroulante à partir de la table département-->
+            <br>
+            <select class="form-control" name=Departement required>
+            {foreach from=$departements key=$key item=$value}
+                {foreach from=$value key=$champs item=$valeur}
+                    <option value={$valeur}> {$valeur}</option>
+                {/foreach}
+            {/foreach}
+            </select>
+        </div>
+        <div class="col">
+            <label for="Scene">Votre Scène</label> <!--Liste déroulante à partir de la table scene-->
+            <br>
+            <select class="form-control" name=Scene required>
+            {foreach from=$scene key=$key item=$value}
+                {foreach from=$value key=$champs item=$valeur}
+                    <option value={$valeur}> {$valeur}</option>
+                {/foreach}
+            {/foreach}
+            </select>
+        </div>
+    </div><br>
+
+    <br>    
+
+    <label for="Responsable">Information du responsable (Compte principal)</label>
     <br>
-    <textarea name='DescGroupe' form='register' rows='5' cols='64' maxlength='500' required></textarea>
+    <div class="row">
+        <div class="col"><input class="form-control" type="text" name="Nom_Resp" placeholder='Nom du responsable' required></div>
+        <div class="col"><input class="form-control" type="text" name="Prenom_Resp" placeholder='Prenom du responsable' required></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col"><input class="form-control" type="text" name="Adresse_Resp" placeholder='Adresse du responsable' required></div>
+        <div class="col"><input class="form-control" type="number" name="CodeP_Resp" placeholder='Code Postal du responsable' required></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col"><input class="form-control" type="email" name="email_Resp" placeholder='Adresse mail du responsable' required></div>
+        <div class="col"><input class="form-control" type="tel" name="Tel_Resp" placeholder='Téléphone du responsable' minlength='10' maxlength='10' required></div>
     </div>
 
-    <div>
-    <br>
-    <label for="ExpScene"> Expériences scéniques du groupe (500 caractères max) : </label>
-    <br>
-    <textarea name='ExpScene' form='register' rows='5' cols='64' maxlength='500' required></textarea>
-    </div>
-
-    <div>
-    <br>
-    <label for="siteGroupe"> Site du groupe : </label>
-    <br>
-    <input type='url' name='siteGroupe' placeholder='https://example.com' required>
-    </div>
-
-    <div>
-    <br>
-    <label for="soundcloud"> Page soundcloud (facultatif) : </label>
-    <br>
-    <input type="url" name ="soundcloud">
-    </div>
-
-    <div>
-    <br>
-    <label for="youtube"> Page Youtube (facultatif) : </label>
-    <br>
-    <input type='url' name='youtube'>
-    </div>
-
-    <div>
+    <div class="row">
+        <div class="col">
         <br>
-        <label for="membre1"> Informations membre 1</label>
+        <label for="DescGroupe">Description du groupe (500 caractères max)</label>
         <br>
-        <input type="text" name="Nom_mem1" placeholder='Nom du membre 1' required>
-        <input type="text" name="Prenom_mem1" placeholder='Prenom du membre 1' required>
-        <input type="text" name="Instrument_mem1" placeholder='Instrument du membre 1' required>
-    </div>
+        <textarea class="form-control" name='DescGroupe' form='register' rows='5' cols='64' maxlength='500' required></textarea>
+        </div>
 
-    <div>
+        <div class="col">
         <br>
-        <label for="membre2"> Informations membre 2</label>
+        <label for="ExpScene">Expériences scéniques du groupe (500 caractères max)</label>
         <br>
-        <input type="text" name="Nom_mem1" placeholder='Nom du membre 2'>
-        <input type="text" name="Prenom_mem1" placeholder='Prenom du membre 2'>
-        <input type="text" name="Instrument_mem1" placeholder='Instrument du membre 2'>
+        <textarea class="form-control" name='ExpScene' form='register' rows='5' cols='64' maxlength='500' required></textarea>
+        </div>
     </div>
 
-    <div>
+    <div class="row">
+        <div class="col">
         <br>
-        <label for="membre3"> Informations membre 3</label>
+        <label for="siteGroupe">Site du groupe</label>
         <br>
-        <input type="text" name="Nom_mem3" placeholder='Nom du membre 3'>
-        <input type="text" name="Prenom_mem3" placeholder='Prenom du membre 3'>
-        <input type="text" name="Instrument_mem3" placeholder='Instrument du membre 3'>
-    </div>
+        <input class="form-control" type='url' name='siteGroupe' placeholder='https://example.com' required>
+        </div>
 
-    <div>
+        <div class="col">
         <br>
-        <label for="membre4"> Informations membre 4</label>
+        <label for="soundcloud">Page soundcloud (facultatif)</label>
         <br>
-        <input type="text" name="Nom_mem4" placeholder='Nom du membre 4'>
-        <input type="text" name="Prenom_mem4" placeholder='Prenom du membre 4'>
-        <input type="text" name="Instrument_mem4" placeholder='Instrument du membre 4'>
-    </div>
+        <input class="form-control" type="url" name ="soundcloud">
+        </div>
 
-        <div>
+        <div class="col">
         <br>
-        <label for="membre5"> Informations membre 5</label>
+        <label for="youtube">Page Youtube (facultatif)</label>
         <br>
-        <input type="text" name="Nom_mem5" placeholder='Nom du membre 5'>
-        <input type="text" name="Prenom_mem5" placeholder='Prenom du membre 5'>
-        <input type="text" name="Instrument_mem5" placeholder='Instrument du membre 5'>
+        <input class="form-control" type='url' name='youtube'>
+        </div>
     </div>
 
-    <div>
+    <div class="row">
+        <div class="col">
+            <br>
+            <label for="membre1">Informations membre 1</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem1" placeholder='Nom' required>
+            <input class="form-control" type="text" name="Prenom_mem1" placeholder='Prenom' required>
+            <input class="form-control" type="text" name="Instrument_mem1" placeholder='Instrument' required>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre2">Informations membre 2</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem1" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem1" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem1" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre3">Informations membre 3</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem3" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem3" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem3" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre4">Informations membre 4</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem4" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem4" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem4" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre5">Informations membre 5</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem5" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem5" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem5" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre6">Informations membre 6</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem6" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem6" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem6" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre7">Informations membre 7</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem7" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem7" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem7" placeholder='Instrument'>
+        </div>
+
+        <div class="col">
+            <br>
+            <label for="membre8">Informations membre 8</label>
+            <br>
+            <input class="form-control" type="text" name="Nom_mem8" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem8" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem8" placeholder='Instrument'>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
         <br>
-        <label for="membre6"> Informations membre 6</label>
+        <label for="statutAssos">Statut associatif</label>
         <br>
-        <input type="text" name="Nom_mem6" placeholder='Nom du membre 6'>
-        <input type="text" name="Prenom_mem6" placeholder='Prenom du membre 6'>
-        <input type="text" name="Instrument_mem6" placeholder='Instrument du membre 6'>
-    </div>
+        <input type='radio' name='statutAssos' value='1' required><label> Oui</label><br>
+        <input type='radio' name='statutAssos' value='0'><label> Non</label>
+        </div>
 
-    <div>
+        <div class="col">
         <br>
-        <label for="membre7"> Informations membre 7</label>
+        <label for="sacem">Inscription à la SACEM</label>
         <br>
-        <input type="text" name="Nom_mem7" placeholder='Nom du membre 7'>
-        <input type="text" name="Prenom_mem7" placeholder='Prenom du membre 7'>
-        <input type="text" name="Instrument_mem7" placeholder='Instrument du membre 7'>
-    </div>
+        <input type='radio' name='sacem' value='1' required><label> Oui</label><br>
+        <input type='radio' name='sacem' value='0'><label> Non</label>
+        </div>
 
-    <div>
+        <div class="col">
         <br>
-        <label for="membre8"> Informations membre 8</label>
+        <label for="producteur">Présence d'un producteur</label>
         <br>
-        <input type="text" name="Nom_mem8" placeholder='Nom du membre 8'>
-        <input type="text" name="Prenom_mem8" placeholder='Prenom du membre 8'>
-        <input type="text" name="Instrument_mem8" placeholder='Instrument du membre 8'>
+        <input type='radio' name='producteur' value='1' required><label> Oui</label><br>
+        <input type='radio' name='producteur' value='0'><label> Non</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+        <br>
+        <label for="fichiermp3">3 fichiers audio au format MP3</label>
+        <br>
+        <input type='file' name='fichiermp3[]' accept=".mp3" multiple required>
+        </div>
+
+        <div class="col">
+        <br>
+        <label for="presse">Article de presse au format PDF (facultatif)</label>
+        <br>
+        <input type='file' name='presse' accept=".pdf">
+        </div>
+
+        <div class="col">
+        <br>
+        <label for="photogroupe">2 images au format PNG </label>
+        <br>
+        <input type='file' name='photogroupe[]' accept=".png" multiple required>
+        </div>
+
+        <div class="col">
+        <br>
+        <label for="ficheTech">Fiche technique au format PDF</label>
+        <br>
+        <input type='file' name='ficheTech' accept=".pdf" required>
+        </div>
+
+        <div class="col">
+        <br>
+        <label for="setlist">Document de la SACEM ou le détail des morceaux de la setlist au format PDF</label>
+        <br>
+        <input type='file' name='setlist' accept=".pdf" required>
+        </div>
     </div>
 
     <div>
     <br>
-    <label for="statutAssos"> Statut associatif ? </label>
-    <br>
-    <input type='radio' name='statutAssos' value='oui' required>
-    <input type='radio' name='statutAssos' value='non'>
-    </div>
-
-    <div>
-    <br>
-    <label for="sacem"> Inscrit à la SACEM ? </label>
-    <br>
-    <input type='radio' name='sacem' value='oui' required>
-    <input type='radio' name='sacem' value='non'>
-    </div>
-
-    <div>
-    <br>
-    <label for="producteur"> Producteur ? </label>
-    <br>
-    <input type='radio' name='producteur' value='oui' required>
-    <input type='radio' name='producteur' value='non'>
-    </div>
-
-    <div>
-    <br>
-    <label for="fichiermp3"> Merci d'uploader 3 fichiers au format mp3 </label>
-    <br>
-    <input type='file' name='fichiermp3[]' accept=".mp3" multiple required>
-    </div>
-
-    <div>
-    <br>
-    <label for="presse"> uploader un article de presse au format pdf (facultatif) </label>
-    <br>
-    <input type='file' name='presse' accept=".pdf">
-    </div>
-
-    <div>
-    <br>
-    <label for="photogroupe"> Merci d'uploader 2 images au format PNG </label>
-    <br>
-    <input type='file' name='photogroupe[]' accept=".png" multiple required>
-    </div>
-
-    <div>
-    <br>
-    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
-    <br>
-    <input type='file' name='ficheTech' accept=".pdf" required>
-    </div>
-
-    <div>
-    <br>
-    <label for="ficheTech"> Uploader une fiche technique au format pdf </label>
-    <br>
-    <input type='file' name='ficheTech' accept=".pdf" required>
-    </div>
-
-    <div>
-    <br>
-    <label for="setlist"> Uploader un document de la SACEM ou le détail des morceaux de la setlist au format pdf </label>
-    <br>
-    <input type='file' name='setlist' accept=".pdf" required>
-    </div>
-
-    <div>
-    <br>
-    <input type="submit" value="S'inscrire">
+    <input class="bouton-form btn btn-primary" type="submit" value="Envoyer la candidature">
     </div>
 </form>
 {/block}
