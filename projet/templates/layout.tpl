@@ -15,28 +15,28 @@
                 <label class="col-md-2 col-11 titre-site"><a href="./">Festival</a></label>
                 <div class="col-md-3 col-11 link">
                     {if isset($Nom)}
-                    <a href="profil">Profil</a>
+                        <a href="profil">Profil</a>
                     {else}
-                    <a href="register">S'inscire</a>
+                        <a href="register">S'inscire</a>
                     {/if}
                 </div>
                 <div class="col-md-3 col-11 link">
                     {if isset($Nom)}
-                    {if $Admin == '1'}
-                    <a href="lstCandidatures">Liste des candidatures</a>
+                        {if $Admin == '1'}
+                            <a href="lstCandidatures">Liste des candidatures</a>
 
+                        {else}
+                        <a href="candidature">Candidater</a>
+                        {/if}
                     {else}
-                    <a href="candidature">Candidater</a>
-                    {/if}
-                    {else}
-                    <a href="candidature">Candidater</a>
+                        <a href="candidature">Candidater</a>
                     {/if}
                 </div>
                 <div class="col-md-3 col-11 link">
                     {if isset($Nom)}
-                    <a href="logout">Se déconnecter</a>
+                        <a href="logout">Se déconnecter</a>
                     {else}
-                    <a href="login">Se connecter</a>
+                        <a href="login">Se connecter</a>
                     {/if}
                 </div>
             </div>

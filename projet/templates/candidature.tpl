@@ -3,15 +3,19 @@
 {block name=page}Candidature{/block}
 {block name=body}
 
-<form action="candidater" method="post" enctype="multipart/form-data" id='register'>
+<form action="candidature" method="post" enctype="multipart/form-data" id='register'>
     <div class="row">
         <div class="col-6"><label for="NomGroupe">Nom du groupe</label> 
         <br>
-        <input class="form-control" type="text" name="NomGroupe" value=''></div>
+        <input class="form-control" type="text" name="NomGroupe" value='{$data.NomGroupe|escape|default:''}' required></div>
         <br>
         <div class="col-6"><label for="AnneeCrea">Année de création</label>
         <br>
-        <input class="form-control" type="number" name="AnneeCrea" value=''></div>
+        <input class="form-control" type="number" name="AnneeCrea" value='{$data.AnneeCrea|escape|default:''}' required><!--{$messages.AnneeCrea|escape|default:''}--></div>
+        <br>
+        <div class="col-6"><label for="Style">Style de musique</label>
+        <br>
+        <input class="form-control" type="text" name="Style" value='{$data.Style|escape|default:''}' required></div>
     </div>
     
     <br>
@@ -20,10 +24,10 @@
         <div class="col"
             <label for="Departement">Votre Département</label> <!--Liste déroulante à partir de la table département-->
             <br>
-            <select class="form-control" name=Departement required>
+            <select class="form-control" name="Departement" required>
             {foreach from=$departements key=$key item=$value}
                 {foreach from=$value key=$champs item=$valeur}
-                    <option value={$valeur}> {$valeur}</option>
+                    <option value='{$valeur}'>{$valeur}</option>
                 {/foreach}
             {/foreach}
             </select>
@@ -31,10 +35,10 @@
         <div class="col">
             <label for="Scene">Votre Scène</label> <!--Liste déroulante à partir de la table scene-->
             <br>
-            <select class="form-control" name=Scene required>
+            <select class="form-control" name="Scene" required>
             {foreach from=$scene key=$key item=$value}
                 {foreach from=$value key=$champs item=$valeur}
-                    <option value={$valeur}> {$valeur}</option>
+                    <option value='{$valeur}'>{$valeur}</option>
                 {/foreach}
             {/foreach}
             </select>
@@ -46,18 +50,18 @@
     <label for="Responsable">Information du responsable (Compte principal)</label>
     <br>
     <div class="row">
-        <div class="col"><input class="form-control" type="text" name="Nom_Resp" placeholder='Nom du responsable' required></div>
-        <div class="col"><input class="form-control" type="text" name="Prenom_Resp" placeholder='Prenom du responsable' required></div>
+        <div class="col"><input class="form-control" type="text" name="Nom_Resp" placeholder='Nom du responsable' value='{$Nom}' required></div>
+        <div class="col"><input class="form-control" type="text" name="Prenom_Resp" placeholder='Prenom du responsable' value='{$Prenom}' required></div>
     </div>
     <br>
     <div class="row">
-        <div class="col"><input class="form-control" type="text" name="Adresse_Resp" placeholder='Adresse du responsable' required></div>
-        <div class="col"><input class="form-control" type="number" name="CodeP_Resp" placeholder='Code Postal du responsable' required></div>
+        <div class="col"><input class="form-control" type="text" name="Adresse_Resp" placeholder='Adresse du responsable' value='{$Adresse}' required></div>
+        <div class="col"><input class="form-control" type="number" name="CodeP_Resp" placeholder='Code Postal du responsable' value='{$CP}' required>{$messages.CopdeP_Resp|escape|default:''}</div>
     </div>
     <br>
     <div class="row">
-        <div class="col"><input class="form-control" type="email" name="email_Resp" placeholder='Adresse mail du responsable' required></div>
-        <div class="col"><input class="form-control" type="tel" name="Tel_Resp" placeholder='Téléphone du responsable' minlength='10' maxlength='10' required></div>
+        <div class="col"><input class="form-control" type="email" name="email_Resp" placeholder='Adresse mail du responsable' value='{$Email}' required></div>
+        <div class="col"><input class="form-control" type="tel" name="Tel_Resp" placeholder='Téléphone du responsable' value='{$data.Tel_Resp|escape|default:''}' minlength='10' maxlength='10' required></div>
     </div>
 
     <div class="row">
@@ -65,14 +69,14 @@
         <br>
         <label for="DescGroupe">Description du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='DescGroupe' form='register' rows='5' cols='64' maxlength='500' required></textarea>
+        <textarea class="form-control" name='DescGroupe' rows='5' cols='64' maxlength='500' value='{$data.DescGroupe|escape|default:''}' required></textarea>
         </div>
 
         <div class="col">
         <br>
         <label for="ExpScene">Expériences scéniques du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='ExpScene' form='register' rows='5' cols='64' maxlength='500' required></textarea>
+        <textarea class="form-control" name='ExpScene' rows='5' cols='64' maxlength='500' value='{$data.ExpScene|escape|default:''}' required></textarea>
         </div>
     </div>
 
@@ -81,21 +85,21 @@
         <br>
         <label for="siteGroupe">Site du groupe</label>
         <br>
-        <input class="form-control" type='url' name='siteGroupe' placeholder='https://example.com' required>
+        <input class="form-control" type='url' name='siteGroupe'  value='{$data.siteGroupe|escape|default:''}' placeholder='https://example.com' required>
         </div>
 
         <div class="col">
         <br>
         <label for="soundcloud">Page soundcloud (facultatif)</label>
         <br>
-        <input class="form-control" type="url" name ="soundcloud">
+        <input class="form-control" type="url" name ="soundcloud" value='{$data.soundcloud|escape|default:''}' >
         </div>
 
         <div class="col">
         <br>
         <label for="youtube">Page Youtube (facultatif)</label>
         <br>
-        <input class="form-control" type='url' name='youtube'>
+        <input class="form-control" type='url' name='youtube' value='{$data.youtube|escape|default:''}'>
         </div>
     </div>
 
@@ -104,72 +108,72 @@
             <br>
             <label for="membre1">Informations membre 1</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem1" placeholder='Nom' required>
-            <input class="form-control" type="text" name="Prenom_mem1" placeholder='Prenom' required>
-            <input class="form-control" type="text" name="Instrument_mem1" placeholder='Instrument' required>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='{$data.Nom_mem[0]|escape|default:''}' required>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='{$data.Prenom_mem[0]|escape|default:''}' required>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='{$data.Instrument_mem[0]|escape|default:''}' required>
         </div>
 
         <div class="col">
             <br>
             <label for="membre2">Informations membre 2</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem1" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem1" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem1" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre3">Informations membre 3</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem3" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem3" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem3" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre4">Informations membre 4</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem4" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem4" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem4" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre5">Informations membre 5</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem5" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem5" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem5" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre6">Informations membre 6</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem6" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem6" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem6" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre7">Informations membre 7</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem7" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem7" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem7" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre8">Informations membre 8</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem8" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem8" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem8" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
         </div>
     </div>
 
@@ -192,7 +196,7 @@
 
         <div class="col">
         <br>
-        <label for="producteur">Présence d'un producteur</label>
+        <label for="producteur">Présence de producteur</label>
         <br>
         <input type='radio' name='producteur' value='1' required><label> Oui</label><br>
         <input type='radio' name='producteur' value='0'><label> Non</label>
@@ -205,6 +209,7 @@
         <label for="fichiermp3">3 fichiers audio au format MP3</label>
         <br>
         <input type='file' name='fichiermp3[]' accept=".mp3" multiple required>
+        {$messages.fichiermp3|escape|default:''}
         </div>
 
         <div class="col">
@@ -219,6 +224,7 @@
         <label for="photogroupe">2 images au format PNG </label>
         <br>
         <input type='file' name='photogroupe[]' accept=".png" multiple required>
+        {$messages.photogroupe|escape|default:''}
         </div>
 
         <div class="col">
