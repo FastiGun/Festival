@@ -282,5 +282,50 @@ Flight::route('/lstCandidatures', function(){
     Flight::render("lstCandidatures.tpl",array());
 });
 
-Flight::route('/profil-@nomGroupe', function($nomGroupe))
+Flight::route('/profil-@nomResp', function($nomResp){
+    $db = Flight::get('db');
+    
+    $db = Flight::get('db');
+
+        $profil = $db->prepare("SELECT email, Nom, Prenom, Adresse FROM utilisateurfest WHERE Email=?");   //Récupère toutes les infos de l'utilisateur connecté
+        $profil->execute([$_SESSION['Email']]);
+        $profil = $profil->fetchAll(PDO::FETCH_ASSOC);   //Retourne le résultat de la requête dans un tableau associatif
+        Flight::view()->assign('profil', $profil);
+    
+    $erreur = array();
+    $champs = array();
+    $presGroupe = $db->prepare("SELECT * FROM candidature WHERE Email_Resp=?");
+    $presGroupe->execute([$_SESSION['Email']]);
+    $presGroupe = $presGroupe->fetch();
+    if(!$presGroupe){
+        $erreur['Erreur'] = "Vous n'avez pas de candidature en cours";
+    } else{
+        $photo = explode(' ', $presGroupe[21]);
+        $champs['photo1'] = "fichiers/".$presGroupe[0]."/".$photo[0];
+        $champs['photo2'] = "fichiers/".$presGroupe[0]."/".$photo[1];
+        $champs['NomGroupe'] = $presGroupe[0];
+        $pistes = explode(' ', $presGroupe[19]);
+        $champs['mp31'] = "./fichiers/".$presGroupe[0]."/".$pistes[0];
+        $champs['mp32'] = "./fichiers/".$presGroupe[0]."/".$pistes[1];
+        $champs['mp33'] = "./fichiers/".$presGroupe[0]."/".$pistes[2];
+        $champs['Departement'] = $presGroupe[2];
+        $champs['Adresse'] = $presGroupe[7];
+        $champs['CP'] = $presGroupe[8];
+        $champs['Style'] = $presGroupe[4];
+        $champs['Scene'] = $presGroupe[3];
+        $champs['Soundcloud'] = $presGroupe[14];
+        $champs['SiteGroupe'] = $presGroupe[13];
+        $champs['Youtube'] = $presGroupe[15];
+        $champs['ExpScene'] = $presGroupe[12];
+        $champs['DescGroupe'] = $presGroupe[11];
+        $champs['Presse'] = "fichiers/".$presGroupe[0]."/".$presGroupe[20];
+        $champs['Setlist'] = "fichiers/".$presGroupe[0]."/".$presGroupe[23];
+        $champs['ficheTech'] = "fichiers/".$presGroupe[0]."/".$presGroupe[22];
+    }
+    
+    Flight::render("profil.tpl", array(
+        'erreur' => $erreur,
+        'champs' => $champs
+    ));
+});
 ?>

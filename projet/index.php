@@ -37,10 +37,12 @@ $departements->execute();
 $departements = $departements->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('departements', $departements);
 
-$groupe = $db->prepare("SELECT NomGroupe, Departement, Style, Scene, Adresse_Resp, DescGroupe, ExpScene  FROM candidature");   
+$groupe = $db->prepare("SELECT NomGroupe AS NomLien, NomGroupe, Departement, Style, Scene, Adresse_Resp, CodeP_Resp, DescGroupe, ExpScene  FROM candidature");   
 $groupe->execute();
 $groupe = $groupe->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('groupe', $groupe);
+
+
 
 $scene = $db->prepare("SELECT scene FROM scene");   
 $scene->execute();
@@ -55,6 +57,7 @@ if(isset($_SESSION['Nom'])){
     Flight::view()->assign('CP', $_SESSION['CP']);
     Flight::view()->assign('Admin', $_SESSION['Admin']);
 }
+
 
 
 Flight::start();

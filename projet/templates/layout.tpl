@@ -4,8 +4,8 @@
         {block name=head}
         <meta charset="utf-8">
         <meta name="viewport" content="">
-        <link rel="stylesheet" href="templates/style.css"/>
-        <link rel="stylesheet" href="templates/bootstrap.min.css"/>
+        <link rel="stylesheet" href="templates/style.css">
+        <link rel="stylesheet" href="templates/bootstrap.min.css">
         {/block}
     </head>
     <header>
@@ -15,7 +15,11 @@
                 <label class="col-md-2 col-11 titre-site"><a href="./">Festival</a></label>
                 <div class="col-md-3 col-11 link">
                     {if isset($Nom)}
-                        <a href="profil">Profil</a>
+                        {if $Admin=='0'}
+                            <a href="profil-{$Nom}">Profil</a>
+                        {else}
+                            <a href="lstCandidatures">Profil</a>
+                        {/if}
                     {else}
                         <a href="register">S'inscire</a>
                     {/if}
@@ -24,12 +28,11 @@
                     {if isset($Nom)}
                         {if $Admin == '1'}
                             <a href="lstCandidatures">Liste des candidatures</a>
-
                         {else}
-                        <a href="candidature">Candidater</a>
+                            <a href="candidature">Candidater</a>
                         {/if}
                     {else}
-                        <a href="candidature">Candidater</a>
+                        <a href="login">Candidater</a>
                     {/if}
                 </div>
                 <div class="col-md-3 col-11 link">
@@ -77,7 +80,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>© Copyright 2021 - Benjamin HEBERT - Axel GORET</p>
+            <p>© Copyright 2021 - Benjamin HEBERT - Axel GORET - Quentin PRADINES</p>
         </div>
     </footer>
     

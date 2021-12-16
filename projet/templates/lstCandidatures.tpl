@@ -15,13 +15,17 @@
         <td>Expérience Scénique</td>
         
     </tr>
-    {foreach from=$groupe key=$key item=$value}
+    {foreach from=$groupe item=$value}
         <tr>
-        <td><a href=''>Détails</a></td>
-        {foreach from=$value key=$champs item=$valeur}
-            <td>{$valeur}</td>
-        {/foreach}
-        </tr>
+            <td><a href='./profil-{$Nom}'>Détails</a></td>
+            <td>{$value['NomGroupe']}</td>
+            <td>{$value['Departement']}</td>
+            <td>{$value['Style']}</td>
+            <td>{$value['Scene']}</td>
+            <td>{$value['Adresse_Resp']}, {$value['CodeP_Resp']}</td>
+            <td>{$value['DescGroupe']}</td>
+            <td>{$value['ExpScene']}</td>
+            </tr>
     {/foreach}
 </table>
 {/block}
