@@ -1,20 +1,8 @@
 {extends file='layout.tpl'}
-{block name=title}Profil{/block}
-{block name=page}Profil{/block}
+{block name=title}Candidature Détaillée{/block}
+{block name=page}Candidature Détaillée{/block}
 {block name=body}
 
-{foreach from=$profil key=$key item=$value}
-    {foreach from=$value key=$champs item=$valeur}
-        <h2>{$champs}</h2>
-        <p>{$valeur}</p>
-    {/foreach}
-{/foreach}
-
-<br>
-
-
-{if !$erreur}
-<h1>Candidature Détaillée</h1>
 <div class="row">
     <div class="col"><img src="{$champs.photo1}" widht=400px /><img src="{$champs.photo2}" widht=400px /></div>
     <div class="col">
@@ -45,8 +33,5 @@
         <div><h4>Fiche Technique</h4><h5><a href="{$champs.ficheTech}">Fiche Technique</a></h5></div>
     </div>
 </div>
-{else}
-<h1>{$erreur.Erreur}</h1>
-{/if}
 
 {/block}

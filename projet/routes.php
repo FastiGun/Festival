@@ -328,4 +328,43 @@ Flight::route('/profil-@nomResp', function($nomResp){
         'champs' => $champs
     ));
 });
+
+Flight::route('/candidature_det-@NomGroupe', function($NomGroupe){
+    $db = Flight::get('db');
+    
+    $champs = array();
+    $presGroupe = $db->prepare("SELECT * FROM candidature WHERE NomGroupe=?");
+    $presGroupe->execute([$NomGroupe]);
+    $presGroupe = $presGroupe->fetch();
+    if(!$presGroupe){
+        $erreur['Erreur'] = "Vous n'avez pas de candidature en cours";
+    } else{
+        $photo = explode(' ', $presGroupe[21]);
+        $champs['photo1'] = "fichiers/".$presGroupe[0]."/".$photo[0];
+        $champs['photo2'] = "fichiers/".$presGroupe[0]."/".$photo[1];
+        $champs['NomGroupe'] = $presGroupe[0];
+        $pistes = explode(' ', $presGroupe[19]);
+        $champs['mp31'] = "./fichiers/".$presGroupe[0]."/".$pistes[0];
+        $champs['mp32'] = "./fichiers/".$presGroupe[0]."/".$pistes[1];
+        $champs['mp33'] = "./fichiers/".$presGroupe[0]."/".$pistes[2];
+        $champs['Departement'] = $presGroupe[2];
+        $champs['Adresse'] = $presGroupe[7];
+        $champs['CP'] = $presGroupe[8];
+        $champs['Style'] = $presGroupe[4];
+        $champs['Scene'] = $presGroupe[3];
+        $champs['Soundcloud'] = $presGroupe[14];
+        $champs['SiteGroupe'] = $presGroupe[13];
+        $champs['Youtube'] = $presGroupe[15];
+        $champs['ExpScene'] = $presGroupe[12];
+        $champs['DescGroupe'] = $presGroupe[11];
+        $champs['Presse'] = "fichiers/".$presGroupe[0]."/".$presGroupe[20];
+        $champs['Setlist'] = "fichiers/".$presGroupe[0]."/".$presGroupe[23];
+        $champs['ficheTech'] = "fichiers/".$presGroupe[0]."/".$presGroupe[22];
+    }
+
+    Flight::render("candidature_det.tpl", array(
+        'champs' => $champs
+    ));
+
+});
 ?>

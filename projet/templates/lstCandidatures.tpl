@@ -17,7 +17,7 @@
     </tr>
     {foreach from=$groupe item=$value}
         <tr>
-            <td><a href='./profil-{$Nom}'>Détails</a></td>
+            <td><a href='./candidature_det-{$value['NomGroupe']}'>Détails</a></td>
             <td>{$value['NomGroupe']}</td>
             <td>{$value['Departement']}</td>
             <td>{$value['Style']}</td>
