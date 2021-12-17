@@ -89,7 +89,6 @@ Flight::route('GET /login', function(){
     Flight::render("login.tpl",array());
 });
 
-
 Flight::route('POST /login', function(){
     $db = Flight::get('db');
     $messages=array();
@@ -196,7 +195,6 @@ Flight::route('/profil-@nomResp', function($nomResp){             //pour un util
 });
 
 /*******************************************************************************************************************************************/
-
 
 Flight::route('GET /candidature', function(){
         Flight::render("candidature.tpl",array());   
@@ -312,7 +310,7 @@ Flight::route('POST /candidature', function(){
             }        
         }
 
-        Flight::redirect('/', array());
+        Flight::redirect('/');
         
         } else{    //Si message d'erreur
         Flight::render('candidature.tpl', 
@@ -328,7 +326,7 @@ Flight::route('POST /candidature', function(){
 /*******************************************************************************************************************************************/
 
 Flight::route('/logout', function(){
-    session_unset();     //vide le tableau de session
+    session_unset();                  //vide le tableau de session
     Flight::redirect('/');
 });
 
@@ -339,7 +337,6 @@ Flight::route('/lstCandidatures', function(){
 });
 
 /*******************************************************************************************************************************************/
-
 
 Flight::route('/candidature_det-@NomGroupe', function($NomGroupe){          //Ici pour l'administrateur, on passe par le nom du groupe
     

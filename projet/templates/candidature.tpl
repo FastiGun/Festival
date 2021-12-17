@@ -69,14 +69,14 @@
         <br>
         <label for="DescGroupe">Description du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='DescGroupe' rows='5' cols='64' maxlength='500' value='{$data.DescGroupe|escape|default:''}' required></textarea>
+        <textarea class="form-control" name='DescGroupe' rows='5' cols='64' maxlength='500' required>{$data.DescGroupe|escape|default:''}</textarea>
         </div>
 
         <div class="col">
         <br>
         <label for="ExpScene">Expériences scéniques du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='ExpScene' rows='5' cols='64' maxlength='500' value='{$data.ExpScene|escape|default:''}' required></textarea>
+        <textarea class="form-control" name='ExpScene' rows='5' cols='64' maxlength='500' required>{$data.ExpScene|escape|default:''}</textarea>
         </div>
     </div>
 
@@ -182,7 +182,7 @@
         <br>
         <label for="statutAssos">Statut associatif</label>
         <br>
-        <input type='radio' name='statutAssos' value='1' required><label> Oui</label><br>
+        <input type='radio' name='statutAssos' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='statutAssos' value='0'><label> Non</label>
         </div>
 
@@ -190,7 +190,7 @@
         <br>
         <label for="sacem">Inscription à la SACEM</label>
         <br>
-        <input type='radio' name='sacem' value='1' required><label> Oui</label><br>
+        <input type='radio' name='sacem' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='sacem' value='0'><label> Non</label>
         </div>
 
@@ -198,7 +198,7 @@
         <br>
         <label for="producteur">Présence de producteur</label>
         <br>
-        <input type='radio' name='producteur' value='1' required><label> Oui</label><br>
+        <input type='radio' name='producteur' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='producteur' value='0'><label> Non</label>
         </div>
     </div>

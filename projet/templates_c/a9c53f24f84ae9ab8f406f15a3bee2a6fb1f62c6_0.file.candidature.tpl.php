@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-12-15 15:56:20
+/* Smarty version 3.1.34-dev-7, created on 2021-12-17 14:31:15
   from 'C:\laragon\www\tps\projet\templates\candidature.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_61ba1024603705_30289874',
+  'unifunc' => 'content_61bc9f33ea6695_91327268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9c53f24f84ae9ab8f406f15a3bee2a6fb1f62c6' => 
     array (
       0 => 'C:\\laragon\\www\\tps\\projet\\templates\\candidature.tpl',
-      1 => 1639583778,
+      1 => 1639751473,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61ba1024603705_30289874 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61bc9f33ea6695_91327268 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65510596961ba10245f2a91_13862084', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_108499919861bc9f33e83260_51246189', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_129468645161ba10245f3215_86693519', 'page');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169224869161bc9f33e83a06_71900672', 'page');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49360800561ba10245f36c3_82442795', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_153464859761bc9f33e83eb1_12796648', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'title'} */
-class Block_65510596961ba10245f2a91_13862084 extends Smarty_Internal_Block
+class Block_108499919861bc9f33e83260_51246189 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_65510596961ba10245f2a91_13862084',
+    0 => 'Block_108499919861bc9f33e83260_51246189',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Candidature<?php
 }
 /* {/block 'title'} */
 /* {block 'page'} */
-class Block_129468645161ba10245f3215_86693519 extends Smarty_Internal_Block
+class Block_169224869161bc9f33e83a06_71900672 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'page' => 
   array (
-    0 => 'Block_129468645161ba10245f3215_86693519',
+    0 => 'Block_169224869161bc9f33e83a06_71900672',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -70,12 +70,12 @@ Candidature<?php
 }
 /* {/block 'page'} */
 /* {block 'body'} */
-class Block_49360800561ba10245f36c3_82442795 extends Smarty_Internal_Block
+class Block_153464859761bc9f33e83eb1_12796648 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_49360800561ba10245f36c3_82442795',
+    0 => 'Block_153464859761bc9f33e83eb1_12796648',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -191,16 +191,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <br>
         <label for="DescGroupe">Description du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='DescGroupe' rows='5' cols='64' maxlength='500' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['DescGroupe'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-' required></textarea>
+        <textarea class="form-control" name='DescGroupe' rows='5' cols='64' maxlength='500' required><?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['DescGroupe'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</textarea>
         </div>
 
         <div class="col">
         <br>
         <label for="ExpScene">Expériences scéniques du groupe (500 caractères max)</label>
         <br>
-        <textarea class="form-control" name='ExpScene' rows='5' cols='64' maxlength='500' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['ExpScene'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
-' required></textarea>
+        <textarea class="form-control" name='ExpScene' rows='5' cols='64' maxlength='500' required><?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['ExpScene'], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+</textarea>
         </div>
     </div>
 
@@ -247,63 +247,84 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <br>
             <label for="membre2">Informations membre 2</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][1], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][1], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][1], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre3">Informations membre 3</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][2], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][2], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][2], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre4">Informations membre 4</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][3], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][3], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][3], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre5">Informations membre 5</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][4], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][4], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][4], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre6">Informations membre 6</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][5], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][5], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][5], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre7">Informations membre 7</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][6], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][6], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][6], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
 
         <div class="col">
             <br>
             <label for="membre8">Informations membre 8</label>
             <br>
-            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom'>
-            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom'>
-            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument'>
+            <input class="form-control" type="text" name="Nom_mem[]" placeholder='Nom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Nom_mem'][7], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Prenom_mem[]" placeholder='Prenom' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Prenom_mem'][7], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
+            <input class="form-control" type="text" name="Instrument_mem[]" placeholder='Instrument' value='<?php echo (($tmp = @htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['Instrument_mem'][7], ENT_QUOTES, 'UTF-8', true))===null||$tmp==='' ? '' : $tmp);?>
+'>
         </div>
     </div>
 
@@ -312,7 +333,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <br>
         <label for="statutAssos">Statut associatif</label>
         <br>
-        <input type='radio' name='statutAssos' value='1' required><label> Oui</label><br>
+        <input type='radio' name='statutAssos' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='statutAssos' value='0'><label> Non</label>
         </div>
 
@@ -320,7 +341,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <br>
         <label for="sacem">Inscription à la SACEM</label>
         <br>
-        <input type='radio' name='sacem' value='1' required><label> Oui</label><br>
+        <input type='radio' name='sacem' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='sacem' value='0'><label> Non</label>
         </div>
 
@@ -328,7 +349,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <br>
         <label for="producteur">Présence de producteur</label>
         <br>
-        <input type='radio' name='producteur' value='1' required><label> Oui</label><br>
+        <input type='radio' name='producteur' value='1' checked required><label> Oui</label><br>
         <input type='radio' name='producteur' value='0'><label> Non</label>
         </div>
     </div>

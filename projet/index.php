@@ -65,4 +65,3 @@ if(isset($_SESSION['Nom'])){
 
 
 Flight::start();
-
