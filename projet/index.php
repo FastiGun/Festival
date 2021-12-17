@@ -31,24 +31,28 @@ Flight::map('render', function($template, $data){
     
 });
 
+//Récupère tous les enregistrement de la table departement et les met dans une variable globale departements, accessible dans les templates
 $db = Flight::get('db');
 $departements = $db->prepare("SELECT NomDepartement FROM departements");   
 $departements->execute();
 $departements = $departements->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('departements', $departements);
 
+//Récupère tous les enregistrement de la table candidature et les met dans une variable globale groupe, accessible dans les templates
 $groupe = $db->prepare("SELECT NomGroupe AS NomLien, NomGroupe, Departement, Style, Scene, Adresse_Resp, CodeP_Resp, DescGroupe, ExpScene  FROM candidature");   
 $groupe->execute();
 $groupe = $groupe->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('groupe', $groupe);
 
 
-
+//Récupère tous les enregistrement de la table scene et les met dans une variable globale scene, accessible dans les templates
 $scene = $db->prepare("SELECT scene FROM scene");   
 $scene->execute();
 $scene = $scene->fetchAll(PDO::FETCH_ASSOC);   
 Flight::view()->assign('scene', $scene); 
 
+
+//Si la session est initialisée, toutes les infos de l'utilisateur sont passée en varaible globale (utile pour le préremplissage de la candidature)
 if(isset($_SESSION['Nom'])){
     Flight::view()->assign('Nom', $_SESSION['Nom']);
     Flight::view()->assign('Prenom', $_SESSION['Prenom']);
